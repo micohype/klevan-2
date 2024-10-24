@@ -1,0 +1,113 @@
+/* Основні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #4682b4;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    animation: slideInFromTop 1.5s ease-in-out;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.info {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+.info-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.info-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+footer {
+    background-color: #4682b4;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .info-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-content p {
+        font-size: 1.1rem;
+    }
+}
