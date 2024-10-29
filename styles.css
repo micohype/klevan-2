@@ -1,113 +1,112 @@
-/* Основні стилі */
+/* Загальні стилі */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f3f4f6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.4s;
 }
 
+/* Хедер */
 header {
-    background-color: #4682b4;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-    animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  padding: 2rem;
+  background-color: #005f73;
+  color: #fff;
+  animation: fadeIn 1.5s ease;
 }
 
 header h1 {
-    font-size: 3rem;
-    animation: slideInFromTop 1.5s ease-in-out;
+  font-size: 2.5rem;
+  animation: slideInFromLeft 1s ease-out;
 }
 
-header p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    animation: fadeIn 2s ease-in-out;
+/* Навігація */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 
-.info {
-    background-color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    transition: background-color 0.5s;
+nav a {
+  text-decoration: none;
+  color: #005f73;
+  font-weight: bold;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
 }
 
-.info-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    animation: fadeInLeft 1.5s ease-in-out;
+nav a:hover {
+  color: #94d2bd;
 }
 
-.info-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #94d2bd;
+  transition: width 0.3s;
 }
 
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Секції */
+section {
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSection 1s forwards;
+  transition: all 0.3s ease-in-out;
+}
+
+section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Футер */
 footer {
-    background-color: #4682b4;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    animation: fadeIn 3s ease-in-out;
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: auto;
 }
 
 /* Анімації */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-@keyframes fadeInLeft {
-    0% {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 
-/* Адаптивність */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header p {
-        font-size: 1.2rem;
-    }
-
-    .info-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .info-content p {
-        font-size: 1.1rem;
-    }
+@keyframes fadeInSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
