@@ -19,6 +19,19 @@ header {
     animation: fadeIn 2s ease;
 }
 
+header h1 {
+    font-size: 2.5rem; /* Збільшуємо розмір тексту */
+    font-weight: bold; /* Робимо текст товстішим */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Додаємо тінь */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem; /* Збільшуємо розмір підзаголовка */
+    opacity: 0.9;
+}
+
+
 main {
     max-width: 900px;
     margin: 2rem auto;
